@@ -15,6 +15,7 @@ set cpoptions=BF
 " if the current buffer doesn't have a file name yet.  Also see |cpo-P|.
 " 'B' is to stop cpoptions breaking vim
 
+set statusline+=%F
 set encoding=utf-8
 set laststatus=2
 set number
