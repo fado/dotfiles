@@ -17,8 +17,8 @@ set cpoptions=BF
 
 set encoding=utf-8
 set laststatus=2
-set number
 set ruler
+set number
 set sta sts=4 ai
 set tw=78 ts=4 sw=4 sta et sts=4 ai
 syntax enable
@@ -40,44 +40,6 @@ endif
 
 " Disable stupid, fucking annoying beeps
 set noerrorbells visualbell t_vb=
-
-
-nnoremap <C-n> :call NumberToggle()<cr>
-if version == 703
-  set number
-  function! NumberToggle()
-    if(&number == 1)
-      set relativenumber
-    elseif(&relativenumber == 1)
-      set nonumber
-      set norelativenumber
-    else
-      set number
-    endif
-  endfunc
-elseif version >= 704
-    set number
-    set relativenumber
-    function! NumberToggle()
-      if(&number == 1) && (&relativenumber == 1)
-        set norelativenumber
-        set nonumber
-      elseif(&number == 1)
-        set relativenumber
-      else
-        set number
-      endif
-    endfunc
-else 
-  function! NumberToggle()
-    if(&number == 1)
-      set nonumber
-    else
-      set number
-    endif
-  endfunc
-endif
-
 
 if has("persistent_undo")
   set undodir=~/vim_changes
